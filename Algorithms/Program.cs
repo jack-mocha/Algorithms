@@ -7,12 +7,22 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new ChildStairsGame();
-            var stairs = 5;
-            var r1 = game.CountWays(stairs);
-            Console.WriteLine("r1: " + r1);
-            var r2 = game.CountWaysMemoized(stairs);
-            Console.WriteLine("r2: " + r2);
+            var maze = new bool[5][]{
+                new bool[] {true,true,true,false,false},
+                new bool[] {true,false,true,true,true},
+                new bool[] {true,false,true,false,true},
+                new bool[] {true,true,false,true,true},
+                new bool[] {true,false,true,true,true}
+            };
+
+            var game = new RobotInGrid();
+            game.GetPath(maze);
+            Console.WriteLine("Trials: " + game.Trials);
+            game.PrintPath();
+            Console.WriteLine("==============================");
+            game.GetPathDP(maze);
+            Console.WriteLine("DP Trials: " + game.Trials);
+            game.PrintPath();
         }
     }
 }
