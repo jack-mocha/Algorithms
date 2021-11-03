@@ -8,6 +8,9 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
+            var game = new PermutationsWithoutDups();
+            var result = game.GetPerms("abc");
+            game.PrintAllPermutations(result);
         }
     }
 }
