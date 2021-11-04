@@ -26,7 +26,7 @@ namespace Algorithms.SearchingAlgorithms
                 return middle;
 
             if (numbers[middle] > target)
-                SearchRecursive(numbers, start, middle - 1, target);
+                return SearchRecursive(numbers, start, middle - 1, target);
 
             return SearchRecursive(numbers, middle + 1, end, target);
         }
