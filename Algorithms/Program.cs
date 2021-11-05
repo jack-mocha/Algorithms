@@ -8,9 +8,11 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new Coins();
-            var ways = game.GetNumOfWaysToRepresent(10);
-            Console.WriteLine(ways);
+            var game = new EightQueens();
+            game.PlaceQueens();
+
+            //var game = new NQueenBackTracking();
+            //game.SolveNQ();
         }
     }
 }
