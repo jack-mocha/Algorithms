@@ -8,11 +8,11 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new EightQueens();
-            game.PlaceQueens();
+            //var game = new EightQueens();
+            //game.PlaceQueens();
 
-            //var game = new NQueenBackTracking();
-            //game.SolveNQ();
+            var game = new NQueenBackTracking();
+            game.SolveNQ();
         }
     }
 }
