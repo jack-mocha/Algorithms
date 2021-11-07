@@ -86,6 +86,74 @@ namespace Algorithms.RecursionAndDynamicProgramming
             return false;
         }
 
+        public List<Point> GetPathBackTracking(bool[][] maze)
+        {
+            if (maze == null || maze.Length == 0)
+                return null;
+
+            Initialize();
+            if (GetPathBackTracking(maze, 0, 0, _path))
+                return _path;
+
+            return null;
+        }
+
+        private bool GetPathBackTracking(bool[][] maze, int row, int col, List<Point> result)
+        {
+            Trials++;
+            if (row == maze.Length - 1 && col == maze[0].Length - 1 && maze[row][col])
+            {
+                result.Add(new Point(row, col));
+                return true;
+            }
+
+            var point = new Point() { X = row, Y = col };
+            if(IsSafe(maze, row, col))
+            {
+                // Check if the current block is already part of solution path.   
+                if (result.Contains(point))
+                    return false;
+
+                // Mark x, y as part of solution path
+                result.Add(point);
+
+                // Move forward in x direction
+                if (GetPathBackTracking(maze, row + 1, col, result))
+                    return true;
+
+                // If moving in x direction doesn't give
+                // solution then Move down in y direction
+                if (GetPathBackTracking(maze, row, col + 1, result))
+                    return true;
+
+                //// If moving in y direction doesm't give
+                //// solution then Move backward in x direction
+                //if (GetPathBackTracking(maze, row - 1, col, result))
+                //    return true;
+
+                //// If moving in backwards in x direction doesn't give
+                //// solution then Move upwards in y direction
+                //if (GetPathBackTracking(maze, row, col - 1, result))
+                //    return true;
+
+                // If none of the above movements works then
+                // BACKTRACK: unmark x, y as part of solution
+                // path
+                result.Remove(point);
+                return false;
+            }
+
+            return false;
+        }
+
+        private bool IsSafe(bool[][] maze, int row, int col)
+        {
+
+            // If (x, y outside maze) return false
+            return (row >= 0 && row < maze.Length && col >= 0 &&
+                    col < maze.Length && maze[row][col]);
+        }
+
         private void Initialize()
         {
             _path = new List<Point>();

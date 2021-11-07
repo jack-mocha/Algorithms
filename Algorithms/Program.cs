@@ -1,6 +1,7 @@
 ﻿using Algorithms.RecursionAndDynamicProgramming;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Algorithms
 {
@@ -8,18 +9,26 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new StackOfBox();
-            var boxes = new List<Box>()
-            {
-                new Box{Height = 3, Depth = 3, Width = 3},
-                new Box{Height = 1, Depth = 1, Width = 1},
-                new Box{Height = 2, Depth = 2, Width = 2},
-                new Box{Height = 4, Depth = 4, Width = 1},
-                new Box{Height = 5, Depth = 5, Width = 5}
+            var maze = new bool[5][]{
+                new bool[] {true,true,true,false,false},
+                new bool[] {true,false,true,true,true},
+                new bool[] {true,false,true,false,true},
+                new bool[] {true,true,false,true,true},
+                new bool[] {true,false,true,true,true}
             };
 
-            Console.WriteLine(game.CreateStack(boxes));
-            Console.WriteLine(game.CreateStackDP(boxes));
+            var game = new RobotInGrid();
+            game.GetPath(maze);
+            Console.WriteLine("Trials: " + game.Trials);
+            game.PrintPath();
+            Console.WriteLine("==============================");
+            game.GetPathDP(maze);
+            Console.WriteLine("DP Trials: " + game.Trials);
+            game.PrintPath();
+            Console.WriteLine("==============================");
+            game.GetPathBackTracking(maze);
+            Console.WriteLine("DP Trials: " + game.Trials);
+            game.PrintPath();
         }
     }
 }
