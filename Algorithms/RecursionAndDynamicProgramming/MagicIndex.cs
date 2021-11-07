@@ -81,7 +81,7 @@ namespace Algorithms.RecursionAndDynamicProgramming
             //Search Left
             var leftIndex = Math.Min(midIndex - 1, midValue);
             var left = FindMagicIndexNonDistinct(numbers, start, leftIndex);
-            if (left > 0)
+            if (left >= 0)
                 return left;
 
             //Search Right
