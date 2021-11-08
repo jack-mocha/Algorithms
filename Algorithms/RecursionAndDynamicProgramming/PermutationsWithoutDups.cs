@@ -33,6 +33,30 @@ namespace Algorithms.RecursionAndDynamicProgramming
             return permutations;
         }
 
+        public List<string> GetPerms2(string remainder)
+        {
+            var len = remainder.Length;
+            var result = new List<string>();
+
+            if (len == 0)
+            {
+                result.Add("");
+                return result;
+            }
+
+            for(int i = 0; i < len; i++)
+            {
+                var before = remainder.Substring(0, i);
+                var after = remainder.Substring(i + 1);
+                var partial = GetPerms2(before + after);
+
+                foreach (var s in partial)
+                    result.Add(remainder[i] + s);
+            }
+
+            return result;
+        }
+
         public void PrintAllPermutations(List<string> permutations)
         {
             var sb = new StringBuilder();
