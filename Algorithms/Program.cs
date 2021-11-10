@@ -9,9 +9,8 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new PermutationsWithoutDups();
-            var result = game.GetPerms2("abc");
-            game.PrintAllPermutations(result);
+            var game = new ShowRecursion();
+            game.Execute(3);
         }
     }
 }
