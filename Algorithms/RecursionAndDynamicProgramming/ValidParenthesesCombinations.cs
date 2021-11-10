@@ -6,14 +6,23 @@ namespace Algorithms.RecursionAndDynamicProgramming
 {
     public class ValidParenthesesCombinations
     {
+        private int _times;
         public void PrintValidParentheses(int pairs)
         {
             if (pairs <= 0)
                 return;
 
-            var parentheses = GetValidParentheses(pairs);
-            foreach (var p in parentheses)
-                Console.WriteLine(p);
+            var str = new char[pairs * 2];
+            var list = new List<string>();
+            GetValidParentheses(list, pairs, pairs, str, 0);
+            foreach(var l in list)
+                Console.WriteLine(l);
+
+            Console.WriteLine("times: " + _times);
+
+            //var parentheses = GetValidParentheses(pairs);
+            //foreach (var p in parentheses)
+            //    Console.WriteLine(p);
         }
 
         //This approach is very similar to PermutationsWithoutDups
@@ -45,6 +54,30 @@ namespace Algorithms.RecursionAndDynamicProgramming
 
             return combinations;
         }
+
+        private void GetValidParentheses(List<string> list, int leftRem, int rightRem, char[] str, int index)
+        {
+            if (leftRem < 0 || rightRem < leftRem)
+            {
+                _times++;
+                return;
+            }
+
+            if (leftRem == 0 && rightRem == 0)
+            {
+                _times++;
+                list.Add(new string(str));
+            }
+            else
+            {
+                str[index] = '(';
+                GetValidParentheses(list, leftRem - 1, rightRem, str, index + 1);
+
+                str[index] = ')';
+                GetValidParentheses(list, leftRem, rightRem - 1, str, index + 1);
+            }
+        }
+
 
         private string InsertInside(string str, int leftIndex)
         {

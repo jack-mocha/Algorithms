@@ -9,8 +9,8 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new ShowRecursion();
-            game.Execute(3);
+            var game = new ValidParenthesesCombinations();
+            game.PrintValidParentheses(3);
         }
     }
 }
