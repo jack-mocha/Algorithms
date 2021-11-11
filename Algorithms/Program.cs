@@ -10,9 +10,9 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new BubbleSort();
+            var alg = new SelectionSort();
             var numbers = new int[] { 8, 2, 4, 1, 3 };
-            alg.Sort(numbers);
+            alg.SortAsc2(numbers);
             alg.Print(numbers);
         }
     }
