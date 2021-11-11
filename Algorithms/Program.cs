@@ -1,4 +1,5 @@
 ﻿using Algorithms.RecursionAndDynamicProgramming;
+using Algorithms.SortingAlgorithms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,8 +10,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var game = new ValidParenthesesCombinations();
-            game.PrintValidParentheses(3);
+            var alg = new BubbleSort();
+            var numbers = new int[] { 8, 2, 4, 1, 3 };
+            alg.Sort(numbers);
+            alg.Print(numbers);
         }
     }
 }
