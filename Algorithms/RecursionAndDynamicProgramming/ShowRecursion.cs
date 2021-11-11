@@ -27,6 +27,18 @@ namespace Algorithms.RecursionAndDynamicProgramming
             Execute(total, n - 1, str, index + 1);
         }
 
+        public void Execute2(int n)
+        {
+            if (n < 0)
+                return;
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("n: " + n + " " + i);
+                Execute2(n - 1);
+            }
+        }
+
         private string GetTabs(int number)
         {
             var sb = new StringBuilder();
