@@ -10,7 +10,7 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new InsertionSort();
+            var alg = new MergeSort();
             var numbers = new int[] { 8, 2, 4, 1, 3 };
             alg.SortAsc2(numbers);
             alg.Print(numbers);
