@@ -30,5 +30,25 @@ namespace Algorithms.SearchingAlgorithms
 
             return SearchRecursive(numbers, middle + 1, end, target);
         }
+
+        public int SerachIterative(int[] numbers, int target)
+        {
+            var left = 0;
+            var right = numbers.Length - 1;
+
+            while(left <= right)
+            {
+                var middle = (left + right) / 2;
+                if (numbers[middle] == target)
+                    return middle;
+
+                if (target < numbers[middle])
+                    right = middle - 1;
+                else
+                    left = middle + 1;
+            }
+
+            return -1;
+        }
     }
 }

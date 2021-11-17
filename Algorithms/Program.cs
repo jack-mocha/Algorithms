@@ -1,4 +1,5 @@
 ﻿using Algorithms.RecursionAndDynamicProgramming;
+using Algorithms.SearchingAlgorithms;
 using Algorithms.SortingAlgorithms;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new BucketSort();
+            var alg = new BinarySearch();
             var numbers = new int[] {  };
-            alg.SortAsc(numbers, 3);
-            alg.Print(numbers);
+            var index = alg.SerachIterative(numbers, 6);
+            Console.WriteLine(index);
         }
     }
 }
