@@ -11,9 +11,9 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new TernarySearch();
+            var alg = new JumpSearch();
             var numbers = new int[] { 1, 3, 8, 7, 2 };
-            var index = alg.Find(numbers, 7);
+            var index = alg.Find(numbers, 9);
             Console.WriteLine(index);
         }
     }
