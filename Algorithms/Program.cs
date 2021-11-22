@@ -11,10 +11,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new ExponentialSearch();
-            var numbers = new int[] { 1, 3, 8, 10, 11, 13 };
-            var index = alg.Find(numbers, 11);
-            Console.WriteLine(index);
+            var alg = new SortedMerge();
+            var large = new int[] { 1, 3, 8, 0, 0 };
+            var small = new int[] { 2, 7 };
+            alg.Merge(large, small);
         }
     }
 }
