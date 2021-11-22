@@ -11,9 +11,9 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new JumpSearch();
-            var numbers = new int[] { 1, 3, 8, 7, 2 };
-            var index = alg.Find(numbers, 9);
+            var alg = new ExponentialSearch();
+            var numbers = new int[] { 1, 3, 8, 10, 11, 13 };
+            var index = alg.Find(numbers, 11);
             Console.WriteLine(index);
         }
     }
