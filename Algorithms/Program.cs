@@ -12,8 +12,9 @@ namespace Algorithms
         static void Main(string[] args)
         {
             var alg = new BinarySearch();
-            var numbers = new int[] {  };
-            var index = alg.SerachIterative(numbers, 6);
+            var numbers = new int[] { 7 };
+            var index = alg.FindOccurrences(numbers, 6);
+            //var index = alg.SerachIterative(numbers, 6);
             Console.WriteLine(index);
         }
     }
