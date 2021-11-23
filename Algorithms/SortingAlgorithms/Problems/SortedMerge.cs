@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithms.SortingAlgorithms
+namespace Algorithms.SortingAlgorithms.Problems
 {
     //Both large and small are sorted.
     //Large has enough space at the end to hold small.
@@ -15,7 +15,7 @@ namespace Algorithms.SortingAlgorithms
             var sIdx = small.Length - 1;
             var current = large.Length - 1;
 
-            while(lIdx >= 0 && sIdx >= 0)
+            while (lIdx >= 0 && sIdx >= 0)
             {
                 if (large[lIdx] > small[sIdx])
                     large[current--] = large[lIdx--];
@@ -23,9 +23,9 @@ namespace Algorithms.SortingAlgorithms
                     large[current--] = small[sIdx--];
             }
 
-            while(lIdx >= 0)
+            while (lIdx >= 0)
                 large[current--] = large[lIdx--];
-            while(sIdx >= 0)
+            while (sIdx >= 0)
                 large[current--] = small[sIdx--];
         }
     }

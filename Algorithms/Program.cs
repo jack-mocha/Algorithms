@@ -1,6 +1,6 @@
 ﻿using Algorithms.RecursionAndDynamicProgramming;
 using Algorithms.SearchingAlgorithms;
-using Algorithms.SortingAlgorithms;
+using Algorithms.SortingAlgorithms.Problems;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
