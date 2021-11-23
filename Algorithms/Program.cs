@@ -11,10 +11,13 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new SortedMerge();
-            var large = new int[] { 1, 3, 8, 0, 0 };
-            var small = new int[] { 2, 7 };
-            alg.Merge(large, small);
+            //var alg = new GroupAnagrams();
+            //var words = new string[] { "tar", "arc", "elbow", "bla", "rat", "car", "below" };
+            //alg.Sort(words);
+
+            var alg = new AnagramComparator();
+            var words = new string[] { "tar", "arc", "elbow", "bla", "rat", "car", "below" };
+            alg.Sort(words);
         }
     }
 }
