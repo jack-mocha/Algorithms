@@ -12,10 +12,23 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new SearchInRotatedArray();
-            var numbers = new int[] { 15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14 };
-            var index = alg.Find(numbers, 3);
-            Console.WriteLine(index);
+            var alg = new MaximalSquare();
+            //var matrix = new char[2][]
+            //{
+            //    new char[] {'1', '1'},
+            //    new char[] {'1', '0'}
+            //};
+            var matrix = new char[6][]
+            {
+                new char[] { '1', '0', '1', '1', '0', '1' },
+                new char[] { '1', '1', '1', '1', '1', '1' },
+                new char[] { '0', '1', '1', '0', '1', '1' },
+                new char[] { '1', '1', '1', '0', '1', '0' },
+                new char[] { '0', '1', '1', '1', '1', '1' },
+                new char[] { '1', '1', '0', '1', '1', '1' }
+            };
+            var area = alg.FindMaxSquare(matrix);
+            Console.WriteLine(area);
         }
     }
 }
