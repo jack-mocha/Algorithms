@@ -12,10 +12,13 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new MinimumDifficuotyOfAJobSchedule();
-            var jobDifficulty = new int[] { 7, 1, 5, 3 };
-            var difficulty = alg.MinDifficulty(jobDifficulty, 3);
-            Console.WriteLine(difficulty);
+            var alg = new LongestIncreasingSubsequence();
+            var nums = new int[]
+            { 10, 9, 2, 5, 3, 7, 101, 18};
+//{ 1, 3, 6, 7, 9, 4, 10, 5, 6};
+            //var res = alg.LengthOfLIS(nums);
+            var res = alg.LengthOfLISTopDown(nums);
+            Console.WriteLine(res);
         }
     }
 }
