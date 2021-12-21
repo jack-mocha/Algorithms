@@ -12,12 +12,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new LongestIncreasingSubsequence();
-            var nums = new int[]
-            { 10, 9, 2, 5, 3, 7, 101, 18};
-//{ 1, 3, 6, 7, 9, 4, 10, 5, 6};
-            //var res = alg.LengthOfLIS(nums);
-            var res = alg.LengthOfLISTopDown(nums);
+            var alg = new WordBreak();
+            var words = new string[]
+            { "leet","code"};
+            var res = alg.ExecuteTopDown("leetcode", words);
             Console.WriteLine(res);
         }
     }
