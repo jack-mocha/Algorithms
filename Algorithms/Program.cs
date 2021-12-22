@@ -12,10 +12,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new WordBreak();
-            var words = new string[]
-            { "leet","code"};
-            var res = alg.ExecuteTopDown("leetcode", words);
+            var alg = new MinCostClimbingStairs();
+            var nums = new int[]
+            { 1,2,3,4,5};
+            var res = alg.Execute(nums);
             Console.WriteLine(res);
         }
     }
