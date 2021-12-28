@@ -12,10 +12,10 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new MinCostClimbingStairs();
-            var nums = new int[]
-            { 1,2,3,4,5};
+            var alg = new MaxSubArray();
+            var nums = new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4 };
             var res = alg.Execute(nums);
+
             Console.WriteLine(res);
         }
     }
