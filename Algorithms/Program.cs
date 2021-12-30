@@ -12,9 +12,9 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            var alg = new MaxSubArray();
-            var nums = new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4 };
-            var res = alg.Execute(nums);
+            var alg = new MaxSubarraySumCircular();
+            var nums = new int[] {1, -2, 3, -2 };
+            var res = alg.MaxSubarraySumCircular2(nums);
 
             Console.WriteLine(res);
         }
